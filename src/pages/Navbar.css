@@ -1,0 +1,103 @@
+/* .navcontainer{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.logh{
+    display: flex;
+}
+
+.logh > img {
+    height: 40px;
+    width: 40px;
+}
+
+.nav-item{
+    margin-right: 15px;
+}
+
+ */
+
+
+
+
+
+
+.navcontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f8ff; /* Light blue background */
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logh {
+    display: flex;
+    align-items: center;
+    margin-right: 400px;
+  }
+  
+  /* .logh img {
+    height: 80px;
+    margin-right: 10px;
+  }
+   */
+  #namew {
+    font-size: 24px;
+    font-weight: bold;
+    /* background: linear-gradient(90deg, green, blue, rgba(255, 255, 255, 0.434)); */
+    background: linear-gradient(90deg, #00b894, #64c9bd, #0073e6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+  }
+  
+  .navlinks {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navlinks a {
+    text-decoration: none;
+    color: #0073e6; /* Blue text */
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navlinks a:hover {
+    color: #00b894; /* Green on hover */
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .nav-item svg {
+    vertical-align: middle;
+  }
+  
+  .lang {
+    margin-left: auto;
+  }
+  
+  .lang select {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #0073e6; /* Blue border */
+    border-radius: 4px;
+    background-color: white;
+    color: #0073e6; /* Blue text */
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .lang select:hover {
+    border-color: #00b894; /* Green border on hover */
+    color: #00b894; /* Green text on hover */
+  }
