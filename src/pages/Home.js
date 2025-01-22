@@ -1,32 +1,37 @@
 import React, { useState } from 'react';
 import { FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import './Home.css';
 import { ArrowRight, Share2, Plus, Minus } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useLanguage } from '../LanguageContext';
+import translations from '../pages/translations';
+
 import Decent from './decent.png';
 import Access from './cent.webp';
 import Intero from './intero.webp';
 import Contri from './Contr1.jpg';
-import { Link } from 'react-router-dom';
+import './Home.css';
 
 const Home = () => {
+  const { language } = useLanguage();
   const [activeIndex, setActiveIndex] = useState(null);
-
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  const text = translations[language];
+
   return (
     <div>
       <div className='block1'>
-        <h2 id='hw'>HealthBook</h2>
-        <p id='pw'>Your Health, Your Data – Secure & Decentralized</p>
+        <h2 id='hw'>{text.title}</h2>
+        <p id='pw'>{text.tagline}</p>
         <div className='btns'>
           <div className='btn1'>
-            <a href="#" id='btn1'>Get Started</a>
+            <Link to="/signup" id='btn1'>{text.getStarted}</Link>
             <ArrowRight size={18} />
           </div>
           <div className='btn2'>
-            <Link to="/login" id='btn2'>Login</Link>
+            <Link to="/login" id='btn2'>{text.login}</Link>
             <Share2 size={18} />
           </div>
         </div>
@@ -35,8 +40,8 @@ const Home = () => {
       <div className='block2' id='block2'>
         <div className='cont1'>
           <div className='set1'>
-            <h3 id='hcont1'>Secure & Decentralized Storage</h3>
-            <p id='pc1'>Your health records, safely stored on blockchain—tamper-proof & accessible only to you.</p>
+            <h3>{text.features[0].title}</h3>
+            <p>{text.features[0].desc}</p>
           </div>
           <div className='set2'>
             <img src={Decent} id='img1' alt="Decentralized Storage" />
@@ -44,8 +49,8 @@ const Home = () => {
         </div>
         <div className='cont2'>
           <div className='set3'>
-            <h3 id='hcont2'>Patient-Centric Access Control</h3>
-            <p id='pc2'>You control who accesses your medical data—doctors, hospitals, and insurers only when you allow it.</p>
+            <h3>{text.features[1].title}</h3>
+            <p>{text.features[1].desc}</p>
           </div>
           <div className='set4'>
             <img src={Access} id='img2' alt="Access Control" />
@@ -53,8 +58,8 @@ const Home = () => {
         </div>
         <div className='cont3'>
           <div className='set5'>
-            <h3 id='hcont3'>Interoperability with Healthcare Systems</h3>
-            <p id='pc3'>Seamless integration with hospitals, labs, and insurance companies.</p>
+            <h3>{text.features[2].title}</h3>
+            <p>{text.features[2].desc}</p>
           </div>
           <div className='set6'>
             <img src={Intero} id='img3' alt="Healthcare Interoperability" />
@@ -62,8 +67,8 @@ const Home = () => {
         </div>
         <div className='cont4'>
           <div className='set7'>
-            <h3 id='hcont4'>Medical Data Sharing with Smart Contracts</h3>
-            <p id='pc4'>Grant or revoke data access to healthcare providers instantly using smart contracts.</p>
+            <h3>{text.features[3].title}</h3>
+            <p>{text.features[3].desc}</p>
           </div>
           <div className='set8'>
             <img src={Contri} id='img4' alt="Smart Contracts" />
@@ -73,59 +78,48 @@ const Home = () => {
 
       {/* FAQ Section */}
       <div className='faq-section' id='faq-section'>
-        <h2>Frequently Asked Questions</h2>
-        {[
-          { question: "What is HealthBook?", answer: "HealthBook is a platform that empowers patients to securely store and manage their health data using blockchain technology." },
-          { question: "How does HealthBook ensure data security?", answer: "We utilize blockchain technology to provide a tamper-proof and decentralized storage solution, ensuring that only you have access to your data." },
-          { question: "Can I share my health data with providers?", answer: "Yes, you have full control to grant or revoke access to your health data to healthcare providers as needed." },
-          { question: "Is HealthBook compliant with healthcare regulations?", answer: "Absolutely, HealthBook adheres to all relevant healthcare regulations to ensure the privacy and security of your data." }
-        ].map((item, index) => (
+        <h2>{text.faqTitle}</h2>
+        {text.faqs.map((faq, index) => (
           <div key={index} className='faq-item' onClick={() => toggleFAQ(index)}>
-            <h3>{item.question} 
-              {activeIndex === index ? <Minus size={18} className="faq-icon" /> : <Plus size={18} className="faq-icon" />}
-            </h3>
-            <p className={activeIndex === index ? 'faq-answer show' : 'faq-answer'}>
-              {item.answer}
-            </p>
+            <h3>{faq.question} {activeIndex === index ? <Minus size={18} /> : <Plus size={18} />}</h3>
+            <p className={activeIndex === index ? 'faq-answer show' : 'faq-answer'}>{faq.answer}</p>
           </div>
         ))}
       </div>
 
+      {/* Footer Section */}
+      <div className='footer'>
+        <div className='foot1'>
+          <h5 id='quick'>{text.quickLinks}</h5>
+          <a href='#' id='ho'>{text.home}</a>
+          <a href='#block2' id='Fea'>{text.featuresTitle}</a>
+          <a href='#faq-section' id='fa'>{text.faqTitle}</a>
+          <a href='#foot2' id='con'>{text.contact}</a>
 
-<div className='footer'>
-    <div className='foot1'>
-        <h5 id='quick'>Quick Links</h5>
-        <a href='' id='ho'>Home</a>
-        <a href='' id='Fea'>Features</a>
-        <a href='' id='fa'>FAQ</a>
-        <a href='' id='con'>Contact</a>
-
-        {/* Social Media Icons */}
-        <div className="social-icons">
-            <a href="#" className="icon twitter" ><FaTwitter /></a>
+          {/* Social Media Icons */}
+          <div className="social-icons">
+            <a href="#" className="icon twitter"><FaTwitter /></a>
             <a href="#" className="icon instagram"><FaInstagram /></a>
             <a href="#" className="icon linkedin"><FaLinkedin /></a>
+          </div>
         </div>
-    </div>
-    
-    <div className='foot2' id='foot2'>
-        <h5 id='coin'>Contact Info</h5>
-        <p id='phone'>Phone:</p>
-        <p id='num'>+91 7986529303</p>
 
-        <h5 id='em'>Send Email:</h5>
-        <p id='enum'>sales@healthbook.com</p>
+        <div className='foot2' id='foot2'>
+          <h5 id='coin'>{text.contactInfo}</h5>
+          <p id='phone'>{text.phone}</p>
+          <p id='num'>+91 7986529303</p>
 
-        <h5 id='addr'>Address:</h5>
-        <p id='adnum'>25/16 Housing Board, UP, India 203844</p>
-    </div>
-</div>
+          <h5 id='em'>{text.emailLabel}</h5>
+          <p id='enum'>sales@healthbook.com</p>
 
-<div className='rese'>
-    <p id='cop'>&copy; 2025 - HealthBook - All Rights Reserved.</p>
-</div>
+          <h5 id='addr'>{text.addressLabel}</h5>
+          <p id='adnum'>25/16 Housing Board, UP, India 203844</p>
+        </div>
+      </div>
 
-
+      <div className='rese'>
+        <p id='cop'>&copy; 2025 - HealthBook - All Rights Reserved.</p>
+      </div>
     </div>
   );
 };

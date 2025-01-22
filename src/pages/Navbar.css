@@ -58,6 +58,9 @@
   .navlinks {
     display: flex;
     gap: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .navlinks a {

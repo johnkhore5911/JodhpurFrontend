@@ -1,6 +1,7 @@
 import React from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 import './Login.css';
+import { Link } from 'react-router-dom';
 
 function Login() {
   const handleSuccess = (credentialResponse) => {
@@ -15,7 +16,7 @@ function Login() {
     <div className="lofocon">
       <h1 id="fh">HealthBook</h1>
       <div className="yourd">
-        <p id="your">I am:</p>
+        <p id="your">Login As</p>
         <select id="pdh" name="pdh">
           <option value="pat">Patient</option>
           <option id="doc">Doctor</option>
@@ -35,9 +36,9 @@ function Login() {
 
       <div className="donacc">
         <p id="dont">Don't have an account?</p>
-        <a href="#" id="sigup">
+        <Link to="/signup" id="sigup">
           Sign up
-        </a>
+        </Link>
       </div>
     </div>
   );

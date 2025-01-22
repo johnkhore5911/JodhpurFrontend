@@ -1,299 +1,176 @@
 /* Login.css */
 
-
-
 /* Overall Container */
-
 .lofocon {
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
-
     min-height: 100vh;
-
     padding: 20px;
+    /* background: #1FA2FF;  
+background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF); 
+background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);  */
 
-    background: linear-gradient(135deg, rgba(0, 115, 230, 0.9), rgba(0, 184, 148, 0.9)), 
+/* background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%); */
+background-color: rgba(194, 219, 234, 0.82);
 
-                url('https://via.placeholder.com/1920x1080') no-repeat center center / cover; /* Replace placeholder with actual image */
+background-image: url("bgi.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+/* background: darkgreen; */
 
     color: white;
-
     text-align: center;
-
 }
 
-
+#or{
+    color: black;
+}
 
 /* Header */
-
 #fh {
-
     font-size: 3rem;
-
     font-weight: bold;
-
     background: linear-gradient(90deg, #00b894, #64c9bd, #0073e6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
+    /* background: linear-gradient(90deg, #1e90ff, #00b894); */
     margin-bottom: 30px;
-
     animation: fadeIn 1s ease-in-out;
-
 }
-
-
 
 /* Dropdown */
-
 .yourd {
-
     margin-bottom: 20px;
-
     font-size: 1.2rem;
-
     color: #f5f5f5;
-
-}
-
-
-
-#pdh {
-
-    font-size: 1rem;
-
-    padding: 10px 20px;
-
-    border: none;
-
-    border-radius: 8px;
-
-    background: white;
-
-    color: #0073e6;
-
-    cursor: pointer;
-
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-}
-
-
-
-#pdh:hover {
-
-    transform: scale(1.05);
-
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-
-}
-
-
-
-/* Input Fields */
-
-#user, #pass {
-
-    width: 80%;
-
-    max-width: 400px;
-
-    padding: 15px;
-
-    margin: 10px 0;
-
-    font-size: 1rem;
-
-    border: 2px solid #0073e6;
-
-    border-radius: 8px;
-
-    background: white;
-
-    color: #333;
-
-    outline: none;
-
-    transition: border-color 0.3s ease;
-
-}
-
-
-
-#user:focus, #pass:focus {
-
-    border-color: #00b894;
-
-}
-
-
-
-/* Submit Button */
-
-#subtn {
-
-    width: 80%;
-
-    max-width: 400px;
-
-    padding: 15px;
-
-    font-size: 1.2rem;
-
-    font-weight: bold;
-
-    color: white;
-
-    background: linear-gradient(90deg, #0073e6, #00b894);
-
-    border: none;
-
-    border-radius: 12px;
-
-    cursor: pointer;
-
-    margin: 20px 0;
-
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-}
-
-
-
-#subtn:hover {
-
-    transform: translateY(-3px);
-
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-
-}
-
-
-
-/* OR Section */
-
-#or {
-
-    font-size: 1.2rem;
-
-    margin: 20px 0;
-
-    color: #e0f7fa;
-
-}
-
-.donacc{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#dont{
+
+#your {
+    margin-right: 10px;
+    font-size: 30px
+}
+
+#pdh {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: #0073e6;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+#pdh:hover {
+    background-color: #e0f7fa;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Fields */
+#user, #pass {
+    width: 80%;
+    max-width: 400px;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border: 2px solid #0073e6;
+    border-radius: 8px;
+    background: white;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#user:focus, #pass:focus {
+    border-color: #00b894;
+    box-shadow: 0 0 8px rgba(0, 184, 148, 0.5);
+}
+
+/* Submit Button */
+#subtn {
+    width: 80%;
+    max-width: 400px;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    /* background: linear-gradient(90deg, #64c9bd, #0073e6); */
+    background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+#subtn:hover {
+    transform: translateY(-3px);
+    background-color: #005bb5;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* OR Section */
+#or {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    color: #e0f7fa;
+}
+
+/* Google Login Button */
+.google-login-button {
+    width: 80%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+/* Signup Section */
+.donacc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #f5f5f5;
+}
+
+#dont {
     margin-right: 6px;
 }
 
-
-
-/* Google Login Button */
-
-.google-login-button {
-
-    width: 80%;
-
-    max-width: 400px;
-
-    margin-bottom: 20px;
-
-}
-
-.yourd{
-    display: flex ;
-    justify-content: center;
-    align-items: center;
-}
-#your{
-    margin-right: 10px;
-}
-
-
-
-/* Signup Section */
-
-.donacc {
-
-    margin-top: 20px;
-
-    font-size: 1rem;
-
-    color: #f5f5f5;
-
-}
-
-
-
 #sigup {
-
-    color: #FFFFFF;
-
+    color: rgb(0, 10, 54);
     font-weight: bold;
-
     text-decoration: none;
-
     transition: color 0.3s ease;
-
 }
-
-
 
 #sigup:hover {
-
-    color: #ffffff;
-
+    color: #00565e;
 }
-
-
 
 /* Animations */
-
 @keyframes fadeIn {
-
     0% {
-
         opacity: 0;
-
     }
-
     100% {
-
         opacity: 1;
-
     }
-
 }
 
-
-
 /* Responsive Design */
-
 @media (max-width: 768px) {
-
     #fh {
-
         font-size: 2.5rem;
-
     }
-
-
 
     #user, #pass, #subtn {
-
         width: 90%;
-
     }
-
 }

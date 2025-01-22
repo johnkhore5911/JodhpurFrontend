@@ -1,0 +1,140 @@
+/* General Styling */
+.hospital-dashboard {
+    padding: 20px;
+    background: linear-gradient(135deg, #e6f7ff, #ffffff);
+    min-height: 100vh;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .hospital-dashboard h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0073e6;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Patient Table */
+  .patient-table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.8s ease-in-out;
+  }
+
+  /* #webna{
+    background: linear-gradient(90deg, #00b894, #64c9bd, #0073e6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  } */
+
+  .patient-table th {
+    background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%);
+  }
+
+  #webna{
+    background: linear-gradient(90deg, #00b894, #64c9bd, #0073e6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .patient-table th, .patient-table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #0073e6;
+    font-size: 1rem;
+  }
+  
+  .patient-table th {
+    background-color: #0073e6;
+    color: black;
+    text-transform: uppercase;
+  }
+  
+  /* .patient-table tr:nth-child(even) {
+    background-color: #f5f7f9;
+  } */
+  
+  .patient-table tr:hover {
+    background-color: #f5f7f9;
+  }
+  
+  /* Details Button */
+  .details-button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+    background-color: #0095F6;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .details-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Patient Details Row */
+  .patient-details-row {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .patient-card {
+    padding: 15px;
+    border: 1px solid #0073e6;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    color: #333;
+  }
+  
+  .patient-card h3 {
+    color: #00b894;
+    margin-bottom: 10px;
+  }
+  
+  .patient-card p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .patient-table {
+      font-size: 0.9rem;
+    }
+  
+    .details-button {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+    }
+  }
